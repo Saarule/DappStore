@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { StatusBar } from "react-native";
 import styled from "styled-components";
 
@@ -9,8 +9,10 @@ import dapps from "../../dapps";
 export default HomeScreen = () => {
 
     const [selectedCategory, setSelectedCategory] = useState("All");
+    const dappsRef = useRef();
 
     const changeCategory = (category) => {
+        dappsRef.current.scrollToOffset({ x: 0, y: 0 });
         setSelectedCategory(category);
     };
 
@@ -63,7 +65,9 @@ export default HomeScreen = () => {
             <Dapps data={dapps.filter((dapp) => {
                 return dapp.category.includes(selectedCategory) || selectedCategory === "All";
             })}
-                KeyExtractor={item => String(item.id)} renderItem={({ item }) => DappItem(item)} />
+                KeyExtractor={item => String(item.id)}
+                renderItem={({ item }) => DappItem(item)}
+                ref={dappsRef} />
         </Container>
     );
 };
