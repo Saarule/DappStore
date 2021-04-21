@@ -3,6 +3,8 @@ import React from 'react';
 import * as Font from 'expo-font'
 import { StyleSheet, Text, View } from 'react-native';
 
+import { NavigationContainer } from '@react-navigation/native'
+
 import HomeScreen from './components/screens/HomeScreen'
 
 export default class App extends React.Component {
