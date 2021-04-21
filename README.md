@@ -1,2 +1,5 @@
-The first appstore for decentralized applications (dapps) to support non-custodial wallets and 2nd layer solutions on top of ethereum blockchain.
-Created as part of the "Scaling Ethereum" ETH-Global vision and agenda.
+DAO DappStore:
+Non-custodial wallets with multiple private keys distributions.
+Supporting simple switch between layer1 and layer2 and vice versa.
+DAO Based application – Holders can vote on anything related to the DappStore.
+
