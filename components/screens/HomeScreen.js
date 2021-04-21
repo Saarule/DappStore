@@ -18,6 +18,13 @@ export default HomeScreen = () => {
         return (
             <Dapp>
                 <DappCover source={dapp.cover} />
+                <DappInfo backgroundColor={dapp.backgroundColor}>
+                    <DappImage source={dapp.cover} />
+                    <DappTitle>
+                        <Text bold medium>{dapp.title}</Text>
+                        <Text small>{dapp.teaser}</Text>
+                    </DappTitle>
+                </DappInfo>
             </Dapp>
         )
     }
@@ -53,7 +60,10 @@ export default HomeScreen = () => {
                 })}
             </Categories>
 
-            <Dapps data={dapps} KeyExtractor={item => String(item.id)} renderItem={({ item }) => DappItem(item)} />
+            <Dapps data={dapps.filter((dapp) => {
+                return dapp.category.includes(selectedCategory) || selectedCategory === "All";
+            })}
+                KeyExtractor={item => String(item.id)} renderItem={({ item }) => DappItem(item)} />
         </Container>
     );
 };
@@ -110,4 +120,22 @@ const Dapp = styled.TouchableOpacity`
 const DappCover = styled.Image`
     height: 300px;
     width: 100%;
+`;
+
+const DappInfo = styled.View`
+    margin: -50px 16px 0 16px;
+    padding: 16px;
+    border-radius: 12px;
+    flex-direction: row;
+    align-items: center;
+`;
+
+const DappImage = styled.Image`
+    width: 50px;
+    height: 40px;
+    border-radius: 8px;
+`;
+
+const DappTitle = styled.View`
+    margin: 0 24px;
 `;

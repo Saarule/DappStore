@@ -13,7 +13,7 @@ export default dapps = [
             require("./assets/uniswap-screenshot1.png"),
             require("./assets/uniswap-screenshot1.png"),
         ],
-        backgroundColor: "#824571"
+        backgroundColor: "#ff007a"
     },
     {
         id: 2,
@@ -29,7 +29,7 @@ export default dapps = [
             require("./assets/compound-screenshot1.png"),
             require("./assets/compound-screenshot1.png"),
         ],
-        backgroundColor: "#824571"
+        backgroundColor: "#00d395"
     },
     {
         id: 3,
@@ -45,6 +45,6 @@ export default dapps = [
             require("./assets/1inch-screenshot1.jpg"),
             require("./assets/1inch-screenshot1.jpg"),
         ],
-        backgroundColor: "#824571"
+        backgroundColor: "#1c344c"
     },
 ]
